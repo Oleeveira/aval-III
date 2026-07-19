@@ -1,5 +1,7 @@
 package br.edu.ifba.inf011.model.playlist;
 
+import br.edu.ifba.inf011.model.Visitors.PlaylistVisitor;
+
 public class MP3 implements PlaylistItem {
     public String nome;
     public double tamanhoMegaBytes;
@@ -9,21 +11,11 @@ public class MP3 implements PlaylistItem {
         this.tamanhoMegaBytes = tamanho; 
     }
     
-    public double getTamanhoMegaBytes() {
-    	return this.tamanhoMegaBytes;
+    public double getTamanhoMegaBytes() { return this.tamanhoMegaBytes; }
+    public String getNome() { return this.nome; }
+
+    @Override
+    public <T> T accept(PlaylistVisitor<T> visitor) {
+        return visitor.visit(this);
     }
-
-    public String getNome() {
-    	return this.nome;
-    }
-
-	@Override
-	public String toXML() {
-		return "<mp3 nome=\"" + this.getNome() + "\"/>\n";
-	}
-
-	@Override
-	public Double getBandwidth(Double bandPerSecond) {
-		return this.getTamanhoMegaBytes();
-	}
 }

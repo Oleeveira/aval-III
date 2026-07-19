@@ -1,5 +1,7 @@
 package br.edu.ifba.inf011.model.playlist;
 
+import br.edu.ifba.inf011.model.Visitors.PlaylistVisitor;
+
 public class Video implements PlaylistItem {
 	
     public String nome;
@@ -21,17 +23,14 @@ public class Video implements PlaylistItem {
     	return this.nome;
     }
 
-	@Override
-	public String toXML() {
-		return "  <video nome=\"" + this.getNome() + "\" link=\"" + this.getLink() + "\"/>\n";
-	}
 
 	private String getLink() {
 		return this.link;
 	}
 
-	@Override
-	public Double getBandwidth(Double bandPerSecond) {
-		return this.getTamanhoMegaBytes();
-	}
+	 @Override
+    public <T> T accept(PlaylistVisitor<T> visitor) {
+        return visitor.visit(this);
+    }
+
 }

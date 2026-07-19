@@ -1,8 +1,9 @@
 package br.edu.ifba.inf011.model.comercial;
 
 import br.edu.ifba.inf011.avaliacao1.timeline.builder.Timeline;
+import br.edu.ifba.inf011.model.Visitors.PlaylistVisitor;
 
-public class Episodio{
+public class Episodio implements ItemComercial {
 	
 	private String titulo;
     private Double preco;
@@ -16,14 +17,17 @@ public class Episodio{
         this.numero = numero;
 	}
 	
+	@Override
     public Double getPreco() {
     	return this.preco; 
     }
     
-    public Integer getDuracao() { 
-    	return this.timeline.getDurationInSeconds();
+	@Override
+    public Double getDuracao() { 
+        return this.timeline.getDurationInSeconds().doubleValue();
     }
 
+	@Override
 	public String getTitulo() {
 		return this.titulo;
 	}
@@ -31,9 +35,9 @@ public class Episodio{
 	public Integer getNumero() {
 		return this.numero;
 	}
-
-	public String toXML() {
-		String xml = "<episodio titulo=\"" + this.getTitulo() + "\" numero=\"" + this.getNumero() + "\"/>\n";
-		return xml;
-	}   	
+	
+	@Override
+    public <T> T accept(PlaylistVisitor<T> visitor) {
+        return visitor.visit(this);
+    }
 }
