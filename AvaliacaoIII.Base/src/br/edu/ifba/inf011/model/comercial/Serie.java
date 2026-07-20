@@ -3,7 +3,7 @@ package br.edu.ifba.inf011.model.comercial;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.ifba.inf011.model.Visitors.PlaylistVisitor;
+import br.edu.ifba.inf011.model.temp_visitors.PlaylistVisitor;
 
 public class Serie implements ItemComercial {
 

@@ -1,4 +1,4 @@
-package br.edu.ifba.inf011.model.Visitors;
+package br.edu.ifba.inf011.model.temp_visitors;
 
 import br.edu.ifba.inf011.model.comercial.Episodio;
 import br.edu.ifba.inf011.model.comercial.Filme;
