@@ -1,7 +1,7 @@
 package br.edu.ifba.inf011.model.comercial;
 
 import br.edu.ifba.inf011.avaliacao1.timeline.builder.Timeline;
-import br.edu.ifba.inf011.model.temp_visitors.PlaylistVisitor;
+import br.edu.ifba.inf011.model.visitors.PlaylistVisitor;
 
 public class Filme implements ItemComercial {
     private String titulo;

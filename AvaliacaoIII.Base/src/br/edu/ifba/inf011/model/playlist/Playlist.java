@@ -3,9 +3,9 @@ package br.edu.ifba.inf011.model.playlist;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.ifba.inf011.model.temp_visitors.BandwidthVisitor;
-import br.edu.ifba.inf011.model.temp_visitors.ReportVisitor;
-import br.edu.ifba.inf011.model.temp_visitors.XMLVisitor;
+import br.edu.ifba.inf011.model.visitors.BandwidthVisitor;
+import br.edu.ifba.inf011.model.visitors.ReportVisitor;
+import br.edu.ifba.inf011.model.visitors.XMLVisitor;
 
 public class Playlist {
     private List<PlaylistItem> items;

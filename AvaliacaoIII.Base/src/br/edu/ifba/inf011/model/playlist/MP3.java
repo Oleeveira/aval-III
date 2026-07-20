@@ -1,6 +1,6 @@
 package br.edu.ifba.inf011.model.playlist;
 
-import br.edu.ifba.inf011.model.temp_temp_visitors.PlaylistVisitor;
+import br.edu.ifba.inf011.model.visitors.PlaylistVisitor;
 
 public class MP3 implements PlaylistItem {
     public String nome;

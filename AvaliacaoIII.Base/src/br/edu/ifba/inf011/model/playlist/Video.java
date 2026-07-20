@@ -1,6 +1,6 @@
 package br.edu.ifba.inf011.model.playlist;
 
-import br.edu.ifba.inf011.model.temp_visitors.PlaylistVisitor;
+import br.edu.ifba.inf011.model.visitors.PlaylistVisitor;
 
 public class Video implements PlaylistItem {
 	
